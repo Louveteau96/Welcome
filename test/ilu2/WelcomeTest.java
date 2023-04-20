@@ -6,16 +6,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class WelcomeTest {
-	private Welcome wc;
-
-	@BeforeEach
-	void setUp() throws Exception {
-		wc = new Welcome();
-	}
-
+	
 	@Test
 	void EX_1() {
-		assertEquals("Bonjour Marc", wc.welcome("Marc"));
+		assertEquals("Hello, Marc", Welcome.welcome("Marc"));
+	}
+	
+	@Test
+	void EX_2() {
+		assertEquals("Hello, my friend", Welcome.welcome("    "));
 	}
 
 }
