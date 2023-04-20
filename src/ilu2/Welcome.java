@@ -7,6 +7,9 @@ public class Welcome {
 		input.trim();
 		if(input.isBlank()) {
 			message.append("my friend");
+		}else if(input.equals(input.toUpperCase())) {
+			message.append(input);
+			message.append(" !");
 		}else {
 			message.append(input);	
 		}
