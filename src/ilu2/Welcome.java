@@ -40,9 +40,9 @@ public class Welcome {
 		
 		for(int i=0; i<input.length;i++) {
 			if(input[i].equals(input[i].toUpperCase())) {
-				namesToUpperCase.add(input[i]);
+				namesToUpperCase.add(input[i].trim());
 			}else {
-				namesToLowerCase.add(input[i]);
+				namesToLowerCase.add(input[i].trim());
 			}
 		}
 		caseNameToLowerCase(namesToLowerCase, message);
