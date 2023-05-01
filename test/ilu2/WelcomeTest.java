@@ -27,26 +27,33 @@ class WelcomeTest {
 	void EX_3() {
 		assertEquals("Hello, JERRY !", bonjour.welcome("JERRY"));
 	}
-	
+
+//Ces tests ne correspondent plus aux consignes
+//	@Test
+//	void EX_4() {
+//		assertEquals("Hello, Amy, Bob", bonjour.welcome("amy,bob"));
+//		//Test name to lowercase
+//		assertEquals("Hello, Marc", bonjour.welcome("marc"));
+//		//Test name==null
+//		assertEquals("Hello, my friend", bonjour.welcome(null));
+//	}
+//	
+//	@Test
+//	void EX_5() {
+//		assertEquals("Hello, Amy, Bob, Jerry", bonjour.welcome("Amy,bob,jerry"));
+//		assertEquals("Hello, Amy, Bob, Jerry", bonjour.welcome("amy,bob,jerry"));
+//	}
+//	
+//	@Test
+//	void EX_6() {
+//		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", bonjour.welcome("Amy,BOB,Jerry"));
+//		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", bonjour.welcome("amy,BOB,Jerry"));
+//	}
+//	
 	@Test
-	void EX_4() {
-		assertEquals("Hello, Amy, Bob", bonjour.welcome("amy,bob"));
-		//Test name to lowercase
-		assertEquals("Hello, Marc", bonjour.welcome("marc"));
-		//Test name==null
-		assertEquals("Hello, my friend", bonjour.welcome(null));
-	}
-	
-	@Test
-	void EX_5() {
-		assertEquals("Hello, Amy, Bob, Jerry", bonjour.welcome("Amy,bob,jerry"));
-		assertEquals("Hello, Amy, Bob, Jerry", bonjour.welcome("amy,bob,jerry"));
-	}
-	
-	@Test
-	void EX_6() {
-		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", bonjour.welcome("Amy,BOB,Jerry"));
-		assertEquals("Hello, Amy, Jerry. AND HELLO, BOB !", bonjour.welcome("amy,BOB,Jerry"));
+	void EX_7() {
+		assertEquals("Hello, Bob, Amy and Jerry", bonjour.welcome("bob,amy,jerry"));
+		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !",bonjour.welcome("bob,AMY,jerry,JACK"));
 	}
 
 }

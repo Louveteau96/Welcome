@@ -58,12 +58,20 @@ public class Welcome {
 			casNomSimple(namesToLowerCase.get(i), message);
 			message.append(", ");
 		}
+		message.deleteCharAt(message.length()-2);
+		message.append("and ");
 		casNomSimple(namesToLowerCase.get(namesToLowerCase.size()-1), message);
 	}
 	
 	private static void caseNameToUpperCase(ArrayList<String> namesToUpperCase, StringBuilder message) {
 		if(!namesToUpperCase.isEmpty()) {
 			message.append(". AND HELLO, ");
+			for(int i=0; i <namesToUpperCase.size()-1;i++) {
+				message.append(namesToUpperCase.get(i));
+				message.append(", ");
+			}
+			message.deleteCharAt(message.length()-2);
+			message.append("AND ");
 			message.append(namesToUpperCase.get(namesToUpperCase.size()-1));
 			message.append(" !");
 		}
