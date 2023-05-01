@@ -1,7 +1,5 @@
 package ilu2;
 
-import java.security.MessageDigest;
-
 public class Welcome {
 	
 	private static StringBuilder message = new StringBuilder("Hello, ");
@@ -18,10 +16,11 @@ public class Welcome {
 			message.append(input);
 			message.append(" !");
 			
-		//Double name
-		}else if(input.equals("amy,bob")) {
-			casDoubleNom(input.split(","),message);
 			
+		//multiple names
+		}else if(input.split(",").length >=2) {
+			casMultiplesNoms(input.split(","),message);
+		
 		//base
 		}else {
 			casNomSimple(input, message);
@@ -31,10 +30,12 @@ public class Welcome {
 		return message.toString();
 	}
 
-	private static void casDoubleNom(String[] input, StringBuilder message) {
-		casNomSimple(input[0], message);
-		message.append(", ");
-		casNomSimple(input[1], message);
+	private static void casMultiplesNoms(String[] input, StringBuilder message) {
+		for(int i=0; i <input.length-1;i++) {
+			casNomSimple(input[i], message);
+			message.append(", ");
+		}
+		casNomSimple(input[input.length-1], message);
 		}
 	
 	private static void casNomSimple(String input, StringBuilder message) {
