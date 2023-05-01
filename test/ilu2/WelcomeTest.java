@@ -61,5 +61,14 @@ class WelcomeTest {
 		assertEquals("Hello, Bob and Amy", bonjour.welcome("bob , amy "));
 		assertEquals("Hello, Bob and Amy. AND HELLO, JERRY AND JACK !", bonjour.welcome("bob , amy ,  JERRY,JACK"));
 	}
+	
+	@Test
+	void EX_9() {
+		//Test l'exercice 8 mais avec qu'un seul nom en majuscule
+		assertEquals("Hello, Bob and Amy. AND HELLO, JERRY !", bonjour.welcome("bob, amy,    JERRY"));
+		//Test normal
+		assertEquals("Hello, Bob(x3) and Amy. AND HELLO, JERRY(x2) !", bonjour.welcome("bob, JERRY, amy, bob,   JERRY, bob"));
+		assertEquals("Hello, Bob(x4). AND HELLO, JERRY AND AMY(x2) !", bonjour.welcome("bob, JERRY, bob,bob,AMY,bob,AMY"));
+	}
 
 }
