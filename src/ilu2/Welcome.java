@@ -1,29 +1,43 @@
 package ilu2;
 
+import java.security.MessageDigest;
+
 public class Welcome {
 	
 	private static StringBuilder message = new StringBuilder("Hello, ");
 	
 	public static String welcome(String input) {
-		input.trim();
-		if(input.isBlank()) {
+		message.setLength(7);
+		
+		//Message empty
+		if(input == null || input.trim().isEmpty()) {
 			message.append("my friend");
+			
+		//Name UpperCase
 		}else if(input.equals(input.toUpperCase())) {
 			message.append(input);
 			message.append(" !");
-		}else if(input.equals("amy,bob")) {
 			
+		//Double name
+		}else if(input.equals("amy,bob")) {
+			casDoubleNom(input.split(","),message);
+			
+		//base
 		}else {
-			message.append(input);	
+			casNomSimple(input, message);
+			
+		//return
 		}
 		return message.toString();
 	}
 
-	private void casDoubleNom(String input) {
-		String[] test = new String[10];
-		test = input.split(",");
-		for (int i = 0; i < test.length; i++) {
-			message.append(test[i]);
+	private static void casDoubleNom(String[] input, StringBuilder message) {
+		casNomSimple(input[0], message);
+		message.append(", ");
+		casNomSimple(input[1], message);
 		}
-		}
+	
+	private static void casNomSimple(String input, StringBuilder message) {
+		message.append(input.substring(0,1).toUpperCase()+input.substring(1));
+	}
 }
