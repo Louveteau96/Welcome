@@ -70,5 +70,13 @@ class WelcomeTest {
 		assertEquals("Hello, Bob(x3) and Amy. AND HELLO, JERRY(x2) !", bonjour.welcome("bob, JERRY, amy, bob,   JERRY, bob"));
 		assertEquals("Hello, Bob(x4). AND HELLO, JERRY AND AMY(x2) !", bonjour.welcome("bob, JERRY, bob,bob,AMY,bob,AMY"));
 	}
+	
+	@Test
+	void EX_10() {
+		assertEquals("Bob, Yoda and Amy, Hello. AND HELLO, JERRY !", bonjour.welcome("bob, yoda, amy, JERRY"));
+		assertEquals("Hello, Bob and Amy. AND YODA(x2) AND JERRY, HELLO !", bonjour.welcome("bob, YODA, amy, JERRY, YODA"));
+		
+		
+	}
 
 }
