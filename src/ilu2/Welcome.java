@@ -1,5 +1,7 @@
 package ilu2;
 
+import java.util.ArrayList;
+
 public class Welcome {
 	
 	private static StringBuilder message = new StringBuilder("Hello, ");
@@ -30,15 +32,47 @@ public class Welcome {
 		return message.toString();
 	}
 
+	
+	
 	private static void casMultiplesNoms(String[] input, StringBuilder message) {
-		for(int i=0; i <input.length-1;i++) {
-			casNomSimple(input[i], message);
-			message.append(", ");
+		ArrayList<String> namesToUpperCase = new ArrayList<>();
+		ArrayList<String> namesToLowerCase = new ArrayList<>();
+		
+		for(int i=0; i<input.length;i++) {
+			if(input[i].equals(input[i].toUpperCase())) {
+				namesToUpperCase.add(input[i]);
+			}else {
+				namesToLowerCase.add(input[i]);
+			}
 		}
-		casNomSimple(input[input.length-1], message);
+		caseNameToLowerCase(namesToLowerCase, message);
+		caseNameToUpperCase(namesToUpperCase, message);
+		
 		}
 	
-	private static void casNomSimple(String input, StringBuilder message) {
-		message.append(input.substring(0,1).toUpperCase()+input.substring(1));
+	
+	
+	private static void caseNameToLowerCase(ArrayList<String> namesToLowerCase, StringBuilder message) {
+		
+		for(int i=0; i <namesToLowerCase.size()-1;i++) {
+			casNomSimple(namesToLowerCase.get(i), message);
+			message.append(", ");
+		}
+		casNomSimple(namesToLowerCase.get(namesToLowerCase.size()-1), message);
 	}
+	
+	private static void caseNameToUpperCase(ArrayList<String> namesToUpperCase, StringBuilder message) {
+		if(!namesToUpperCase.isEmpty()) {
+			message.append(". AND HELLO, ");
+			message.append(namesToUpperCase.get(namesToUpperCase.size()-1));
+			message.append(" !");
+		}
+	}
+	
+	
+	private static void casNomSimple(String input, StringBuilder message) {
+		message.append(input.substring(0,1).toUpperCase());
+		message.append(input.substring(1));
+	}
+
 }
