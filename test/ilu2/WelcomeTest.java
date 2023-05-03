@@ -75,6 +75,8 @@ class WelcomeTest {
 	void EX_10() {
 		assertEquals("Bob, Yoda and Amy, Hello. AND HELLO, JERRY !", bonjour.welcome("bob, yoda, amy, JERRY"));
 		assertEquals("Hello, Bob and Amy. AND YODA(x2) AND JERRY, HELLO !", bonjour.welcome("bob, YODA, amy, JERRY, YODA"));
+		assertEquals("Yoda, Hello. AND HELLO, JERRY !", bonjour.welcome("yoda, JERRY"));
+		assertEquals("Hello, Bob. AND YODA, HELLO !", bonjour.welcome("bob,YODA"));
 		
 		
 	}

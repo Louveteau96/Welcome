@@ -131,8 +131,8 @@ public class Welcome {
 	}
 	
 	private static void caseNameToLowerCaseReverse(ArrayList<String> namesToLowerCase, StringBuilder message, HashMap<String,Integer> names) {
+		message.setLength(0);
 		if(namesToLowerCase.size()>1) {
-			message.setLength(0);
 			for(int i=0; i <namesToLowerCase.size()-1;i++) {
 				messageSelonNbrNoms(namesToLowerCase.get(i), message, names);
 				message.append(", ");
@@ -150,8 +150,8 @@ public class Welcome {
 	
 	private static void caseNameToUpperCaseReverse(ArrayList<String> namesToUpperCase, StringBuilder message, HashMap<String,Integer> names) {
 		if(!namesToUpperCase.isEmpty()) {
+			message.append(". AND ");
 			if(namesToUpperCase.size()>1) {
-				message.append(". AND ");
 				for(int i=0; i <namesToUpperCase.size()-1;i++) {
 					messageSelonNbrNoms(namesToUpperCase.get(i), message, names);
 					message.append(", ");
